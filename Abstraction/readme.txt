@@ -1,0 +1,1 @@
+Abstraction ---> Abstract class cannot be instantiating it's own and may contain abstract(incomplete) methods and also contains concrete(implemented) methods.Abstract classes used as base class from other class can derived. 
