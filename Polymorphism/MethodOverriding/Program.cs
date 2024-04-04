@@ -48,9 +48,19 @@ namespace RunTimePolymorphism
 
         static void Main(string[] args)
         {
-            B obj = new B();
+            A obj = new B();
             obj.Show();
             Console.Read();
+
+
+            /*
+In this modified example, we are creating an object of class B and assigning it to a reference of type A. This is allowed because of polymorphism - you can assign an object of a derived class (B) to a reference of a base class (A).
+
+Now, even though the reference obj is of type A, it's actually pointing to an object of type B. When you call obj.Show(), the method executed is determined by the runtime type of the object, which is B. Therefore, the Show() method of class B is executed, and "Class B" is printed to the console.
+
+This is runtime polymorphism because the decision about which method to execute (Show() method of class A or B) is made at runtime based on the actual type of the object (B in this case), not the type of the reference (A in this case). Even though you didn't explicitly call the base class method, the mechanism of runtime polymorphism ensures that the correct method is executed based on the object's type at runtime.
+
+            */
         }
     }
 }
