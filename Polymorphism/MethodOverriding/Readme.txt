@@ -1,10 +1,80 @@
 Method Overriding:Allows a subclass to provide a specific implementation of a method that is already defined in superclass.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Here’s an example to demonstrate method overriding in C# with and without using the virtual and override keywords:
 
-Yes, you are correct. In the provided code, although the virtual and override keywords are not used, method overriding is still happening. In C#, when you have a method in a base class and a method with the same signature in a derived class, the method in the derived class automatically overrides the method in the base class.
+1. Without virtual and override Keywords:
 
-However, it's important to note that without the virtual keyword in the base class, you won't be able to explicitly indicate that the method is designed to be overridden. The virtual keyword is a way to express the intention that a method can be overridden in derived classes.
+In this case, the derived class method hides the base class method with the same signature, but it’s not considered an override by the compiler.
 
-Additionally, without the override keyword in the derived class, you won't get a compiler warning if the method in the derived class doesn't actually override a method in the base class. Using override explicitly tells the compiler that you are intentionally providing a new implementation for a method in the base class.
+using System;
 
-So, while method overriding is occurring implicitly in your code, using virtual and override provides better clarity, documentation, and helps avoid accidental mistakes. It's generally recommended to use these keywords when you are designing classes for explicit method overriding.
+class Animal
+{
+    public void Speak() // No 'virtual' keyword here
+    {
+        Console.WriteLine("The animal makes a sound.");
+    }
+}
+
+class Dog : Animal
+{
+    public void Speak() // No 'override' keyword here
+    {
+        Console.WriteLine("The dog barks.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Animal myAnimal = new Animal();
+        Animal myDog = new Dog(); // Object of derived class but referenced by base class
+
+        myAnimal.Speak(); // Output: The animal makes a sound.
+        myDog.Speak();    // Output: The animal makes a sound. (method is not overridden)
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+2. With virtual and override Keywords:
+
+In this case, the derived class method properly overrides the base class method.
+
+using System;
+
+class Animal
+{
+    public virtual void Speak() // 'virtual' keyword allows the method to be overridden
+    {
+        Console.WriteLine("The animal makes a sound.");
+    }
+}
+
+class Dog : Animal
+{
+    public override void Speak() // 'override' keyword provides new implementation
+    {
+        Console.WriteLine("The dog barks.");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Animal myAnimal = new Animal();
+        Animal myDog = new Dog(); // Object of derived class but referenced by base class
+
+        myAnimal.Speak(); // Output: The animal makes a sound.
+        myDog.Speak();    // Output: The dog barks. (method is overridden)
+    }
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+Key Differences:
+
+1.Without virtual and override: The derived class method hides the base class method, but if you reference the derived object through a base class reference (like Animal myDog = new Dog()), the base class method is called.
+
+2.With virtual and override: The derived class method properly overrides the base class method, and when you call the method through a base class reference, the derived class's version of the method is invoked. This provides better clarity and more control over method overriding.
