@@ -64,3 +64,46 @@ This is runtime polymorphism because the decision about which method to execute 
         }
     }
 }
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+   
+The choice between A obj = new B(); and B obj = new B(); relates to the concept of polymorphism in object-oriented programming, specifically runtime polymorphism. Here’s a breakdown of the reasons and implications of using each approach:
+
+1. Using A obj = new B();
+Base Class Reference: This line creates a reference obj of type A that points to an instance of B. This is significant because it allows you to treat the derived class (B) as if it were an instance of the base class (A).
+    
+Polymorphism: It enables polymorphism, meaning that you can use a base class reference to call methods that may be overridden in derived classes. When you call obj.Show(), the runtime determines that the actual object is of type B, so it calls the overridden Show() method in B.
+Flexibility: This approach is useful in scenarios where you might want to handle different derived classes uniformly. For example, if you have multiple classes derived from A, you can create a collection of A references that can point to any of these derived classes. This allows for more flexible and extensible code.
+
+2. Using B obj = new B();
+Derived Class Reference: This line creates a reference obj of type B that points to an instance of B. In this case, since the reference type is the same as the object type, you can directly access methods and properties specific to class B.
+No Polymorphism: If you only need to work with class B, you can certainly use this method. However, you lose the benefits of polymorphism, as the reference type B can only refer to objects of type B (and not to any of its base classes).
+When to Use Each Approach:
+Use A obj = new B(); when you want to take advantage of polymorphism. It’s particularly beneficial in scenarios involving collections of different derived types or when you want to pass objects to methods that accept base class parameters.
+
+Use B obj = new B(); when you specifically need to work with the derived class and want direct access to its members. This is simpler and avoids the overhead of polymorphism if you don’t need it.
+
+Example Scenario:
+Here’s a practical scenario to illustrate the difference:
+
+class Program
+{
+    static void ProcessObject(A obj)
+    {
+        obj.Show();
+    }
+
+    static void Main(string[] args)
+    {
+        A obj1 = new B();  // Polymorphism
+        ProcessObject(obj1); // This will call B's Show() method
+
+        B obj2 = new B();  // Direct reference
+        obj2.Show(); // This will also call B's Show() method
+    }
+}
+In the above example:
+
+The ProcessObject method accepts a parameter of type A, allowing it to process any derived classes polymorphically.
+You can pass an object of type B to ProcessObject, which allows for dynamic method resolution at runtime.
