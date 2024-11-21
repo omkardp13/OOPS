@@ -25,7 +25,8 @@ One method name (Add) handles both integers and doubles, improving clarity.
 
 2. Facilitates Polymorphism
 
-Overloading is a form of compile-time polymorphism (also known as static polymorphism). It allows different method versions to be chosen based on parameter types and numbers at compile-time.
+Overloading is a form of compile-time polymorphism (also known as static polymorphism). 
+It allows different method versions to be chosen based on parameter types and numbers at compile-time.
 
 Example:
 
