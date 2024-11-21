@@ -1,4 +1,7 @@
-Method Overriding : Method overriding is a fundamental concept in object-oriented programming (OOP) that allows a subclass to provide a specific implementation of a method that is already defined in its superclass. It is mainly used to achieve runtime polymorphism, enhance code flexibility, and promote reusability and maintainability in your code. 
+Method Overriding : 
+1.Method overriding is a fundamental concept in object-oriented programming (OOP) that allows a subclass to provide a specific implementation of a method that is already defined in its superclass. 
+
+2.It is mainly used to achieve runtime polymorphism, enhance code flexibility, and promote reusability and maintainability in your code. 
 
 Here's why we need method overriding:
 
