@@ -1,6 +1,9 @@
 1. Can you overload a method by only changing the return type?
 Explanation: Method overloading requires changes in the method signature, specifically the number, types, or order of parameters. Changing just the return type does not suffice.
 
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Example:
 
 public class Example
@@ -10,7 +13,8 @@ public class Example
     // public double Add(int a, int b) { return a + b; }
 }
 Conclusion: You cannot overload a method by only changing the return type.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 2. What is the difference between method overloading and method overriding?
 Explanation: Method overloading is compile-time polymorphism, while method overriding is runtime polymorphism.
@@ -37,14 +41,13 @@ public class Child : Parent
     public override void Greet() { Console.WriteLine("Hello from Child!"); }
 }
 Conclusion: Overloading is based on parameters, while overriding is based on inheritance and replacing base class methods.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 3. Is it possible to overload methods using params keyword?
 Explanation: Yes, params can be used in overloading, but it must be the last parameter in the method.
 
 Example:
 
-csharp
-Copy code
 public class Example
 {
     public void Print(params int[] numbers) 
@@ -68,7 +71,8 @@ class Program
     }
 }
 Conclusion: You can use params in method overloading, but it should be used carefully to avoid ambiguity.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 4. What happens if two overloaded methods have the same number of parameters but different types, and you pass a null value?
 Explanation: If the null can be assigned to multiple types, the compiler cannot determine which overload to choose.
 
@@ -91,7 +95,7 @@ class Program
 }
 Conclusion: Passing null to an ambiguous method overload will result in a compile-time error.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 5. Can you overload static and instance methods with the same name in the same class?
 Explanation: Static and instance methods can be overloaded as long as they have different parameter signatures.
@@ -115,7 +119,7 @@ class Program
 }
 Conclusion: Static and instance methods can have the same name and be overloaded based on their parameters.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 6. How does method overloading work with optional parameters?
 Explanation: Optional parameters can introduce ambiguity if the method signatures are too similar.
@@ -137,9 +141,10 @@ public class Example
 }
 Conclusion: Optional parameters can cause overloading conflicts, so avoid overloading methods that differ only in optional parameters.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 7. How does method overloading behave with generic methods?
+
 Explanation: Generic methods can be overloaded by changing the type or number of generic parameters or the regular parameters.
 
 Example:
@@ -160,7 +165,8 @@ class Program
     }
 }
 Conclusion: Generic methods can be overloaded like regular methods, but the number or types of generic parameters must differ.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 8. Can method overloading be affected by inheritance?
 Explanation: When methods are overloaded in a base class, derived classes can introduce new overloads or hide existing ones.
 
@@ -187,15 +193,14 @@ class Program
 }
 Conclusion: Overloaded methods in the base class can be called in the derived class, and derived classes can introduce new overloads.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 9. If two overloaded methods are equally good matches, what will the compiler do?
 Explanation: The compiler throws an error when it cannot resolve which overloaded method to call.
 
 Example:
 
-csharp
-Copy code
 public class Example
 {
     public void Show(int a, double b) { Console.WriteLine("Int, Double"); }
@@ -213,7 +218,8 @@ class Program
 }
 Conclusion: When two overloaded methods are equally good matches, the compiler will throw an ambiguity error.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 
 10. What will happen if we overload a method in a derived class with a new signature without using new or override keywords?
 Explanation: Overloading a method in a derived class without using new or override results in method hiding.
@@ -241,14 +247,13 @@ class Program
 }
 Conclusion: When not using new or override, method hiding occurs, and the base class method will be called if invoked through a base class reference.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 11. Can two overloaded methods differ only by ref and out keywords?
 Explanation: Overloading methods by just using ref or out is allowed since these keywords are part of the method signature. However, it can be confusing and might lead to ambiguous usage.
 
 Example:
 
-csharp
-Copy code
 public class Example
 {
     public void Process(ref int number) { number += 10; }
@@ -270,7 +275,8 @@ class Program
 }
 Conclusion: You can overload methods by distinguishing between ref and out, but it may lead to unclear code, and caution should be exercised when using them.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 12. What happens when method overloading involves implicit type conversion?
 Explanation: If you have multiple overloaded methods and implicit type conversion is required, the compiler might choose the best match or throw an ambiguity error.
 
@@ -292,7 +298,8 @@ class Program
     }
 }
 Conclusion: The compiler will use implicit type conversion to determine the best overload. In this case, the float type is implicitly converted to double.
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 13. Can you overload methods based on the const modifier in parameters?
 Explanation: The const modifier is not part of the method signature, so it cannot be used to distinguish overloaded methods.
 
@@ -307,7 +314,8 @@ public class Example
 }
 Conclusion: You cannot overload methods by making a parameter const because it is not part of the method signature.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 14. What happens when method overloading is combined with params arrays and other parameters?
 Explanation: The params keyword allows passing a variable number of arguments, but it can introduce ambiguity when combined with overloading.
 
@@ -337,7 +345,7 @@ class Program
 }
 Conclusion: Be careful with overloading methods involving params. In this case, there’s no ambiguity, but more complex signatures can lead to compiler errors.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 15. Can you overload methods with in, ref, and out parameters in the same class?
 Explanation: Yes, in, ref, and out are considered different method signatures. They modify the way arguments are passed, and you can overload methods using them.
@@ -364,7 +372,7 @@ class Program
 }
 Conclusion: in, ref, and out parameters can be used to overload methods, but they change how arguments are passed (readonly for in, pass by reference for ref, and pass-by-reference-for-output for out).
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 16. Can overloaded methods cause ambiguity when used with nullable types?
 Explanation: If a nullable type is passed to overloaded methods, the compiler might not be able to determine the correct method to call, leading to an ambiguity error.
@@ -406,7 +414,7 @@ public class Example
 }
 Conclusion: Overloading based on parameter names is not allowed because parameter names are not part of the method signature.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 18. What happens when you overload constructors with the this keyword?
 Explanation: Overloaded constructors can call each other using the this keyword, allowing code reuse within constructors.
@@ -436,7 +444,7 @@ class Program
 }
 Conclusion: Constructor overloading allows you to reuse code and maintain consistency in object initialization using the this keyword.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 19. How does method overloading interact with inheritance and base keyword?
 Explanation: The base keyword can be used to call an overloaded method in the parent class, allowing code reuse across a class hierarchy.
@@ -467,7 +475,7 @@ class Program
 }
 Conclusion: Inheritance allows you to overload methods in derived classes and reuse base class methods using the base keyword.
 
--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 20. What happens if two overloaded methods have the same parameter types but different access modifiers?
 Explanation: Access modifiers like public, private, and protected are not considered part of the method signature, so you cannot overload methods based on them.
