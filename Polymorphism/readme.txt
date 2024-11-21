@@ -8,19 +8,24 @@ Two Types:1.Compile-Time Polymorphism(Static Polymorphism)--->Method Overloading
 In object-oriented programming, the terms reference and instance are fundamental concepts that are closely related but have distinct meanings. Here’s a breakdown of the differences between the two:
 
 1.Instance : 
-Definition: An instance refers to a specific realization of a class. When you create an object from a class, you are creating an instance of that class.
-Memory Allocation: When an instance is created, memory is allocated for it, and it contains all the properties and methods defined in the class. Each instance has its own state and behavior.
+Definition: An instance refers to a specific realization of a class.
+When you create an object from a class, you are creating an instance of that class.
+Memory Allocation: When an instance is created, memory is allocated for it, and it contains all the properties and methods defined in the class.
+Each instance has its own state and behavior.
 Example: If you have a class named Car, creating a new object from this class (e.g., Car myCar = new Car();) means you have an instance of Car named myCar. Each Car instance can have different values for its properties (like color, model, etc.).
 
 ----------------------------------------------------------------------------------------------------------------------
 
-Reference
-Definition: A reference is a variable that holds the address of an instance in memory. It allows you to access the instance’s methods and properties.
-No Memory for Data: A reference itself does not contain the actual data of the instance. Instead, it points to the location in memory where the instance is stored.
+2.Reference
+Definition: A reference is a variable that holds the address of an instance in memory.
+It allows you to access the instance’s methods and properties.
+No Memory for Data: A reference itself does not contain the actual data of the instance.
+Instead, it points to the location in memory where the instance is stored.
 Multiple References: Multiple references can point to the same instance. For example, if you assign one reference to another (e.g., Car myCar2 = myCar;), both myCar and myCar2 refer to the same Car instance.
 Example: Using the previous example, Car myCar = new Car(); creates a reference named myCar that points to the instance of Car. If you have another reference like Car myCar2 = myCar;, both myCar and myCar2 refer to the same Car instance.
 
-----------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
      Instance                           |       Reference
 1.A specific object created from a class. | A variable that holds the address of an instance.
 
@@ -32,7 +37,8 @@ Example: Using the previous example, Car myCar = new Car(); creates a reference 
 
 ----------------------------------------------------------------------------------------------------------------------
 
-Visual Representation
+Visual Representation: 
+
 Creating an Instance:
 
 Car myCar = new Car();  // 'myCar' is a reference to a new instance of 'Car'
