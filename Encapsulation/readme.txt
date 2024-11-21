@@ -1,9 +1,14 @@
-Encapsulation is a fundamental principle of object-oriented programming (OOP) that involves bundling the data (attributes) and methods (operations) that operate on the data into a single unit, or class, and restricting access to the internals of that class. This is typically achieved through the use of access modifiers such as private, public, protected, and internal. Encapsulation helps to protect an object's internal state from unauthorized access and modification by external code, promoting data integrity and security.
+1.Encapsulation is a fundamental principle of object-oriented programming (OOP) that involves bundling the data (attributes) and methods (operations) that operate on the data into a single unit, or class, and restricting access to the internals of that class. 
 
-Encapsulation allows the internal representation of an object to be hidden from the outside, only allowing access through a public interface. This concept is also known as data hiding. By controlling how data is accessed and modified, encapsulation helps to reduce complexity and increase reusability of code.
+2.This is typically achieved through the use of access modifiers such as private, public, protected, and internal. 
+Encapsulation helps to protect an object's internal state from unauthorized access and modification by external code, promoting data integrity and security.
 
-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-punlic,private,protected and internal keywords:
+3.Encapsulation allows the internal representation of an object to be hidden from the outside, only allowing access through a public interface.
+This concept is also known as data hiding. By controlling how data is accessed and modified, encapsulation helps to reduce complexity and increase reusability of code.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+##punlic,private,protected and internal keywords:
 
 In C#, these keywords are used to specify the accessibility levels of classes, methods, properties, and other members within a program. Here's an explanation of each:
 
@@ -21,6 +26,8 @@ class MyClass
     }
 }
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 2.public: Members marked as public are accessible from any other code in the same assembly or in another assembly that references the assembly where the public member is defined. This means that public members can be accessed from anywhere.
 
 Ex:
@@ -34,8 +41,10 @@ public class MyClass
     }
 }
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-3.protected: Members marked as protected are accessible within the same class, derived classes (subclasses), and the same assembly. However, they are not accessible from outside the assembly if not inherited by another class.
+3.protected: Members marked as protected are accessible within the same class, derived classes (subclasses), and the same assembly. 
+However, they are not accessible from outside the assembly if not inherited by another class.
 
 ex:
 public class MyBaseClass
@@ -56,6 +65,8 @@ public class MyDerivedClass : MyBaseClass
     }
 }
 
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 4.internal: Members marked as internal are accessible only within files of the same assembly. They are not accessible from outside the assembly, even if they are part of a public class.
 
 ex:
@@ -69,8 +80,7 @@ internal class MyClass
         // This method can be accessed within the same assembly
     }
 }
-csharp
-Copy code
+
 // File2.cs in the same assembly
 class AnotherClass
 {
