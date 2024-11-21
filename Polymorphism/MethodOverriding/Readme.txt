@@ -1,6 +1,7 @@
 Method Overriding:Allows a subclass to provide a specific implementation of a method that is already defined in superclass.
 
------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
 Here’s an example to demonstrate method overriding in C# with and without using the virtual and override keywords:
 
 1. Without virtual and override Keywords:
